@@ -36,3 +36,24 @@ var arr=[100,200,300,400]
 arr.forEach((element,indexed)=>{
     console.log(indexed,element)
 })
+// Promise object
+var result=new Promise((resolve,reject)=>{
+    var marks=25;
+    if (marks>50)  resolve("pass")    
+    else           reject("fail")
+})
+result.then((res)=>{
+    console.log(res);
+})
+.catch((error)=>{
+    console.log(error);
+})
+// Asynchronus operation
+var delayedmsg=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("message delayed for 5 sec")
+    },5000)
+})
+delayedmsg.then((res)=>{
+    console.log(res);
+})
