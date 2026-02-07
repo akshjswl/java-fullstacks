@@ -6,6 +6,9 @@ import Profile from './component/state/Profile';
 import User from './component/Axios/User';
 import "bootstrap/dist/css/bootstrap.css";
 import Userinfo from './component/useeffect/Userinfo';
+import Parent from './component/props/Parent';
+import A from './component/propsdrilling/A';
+import Parent1 from './component/contextapi/Parent1';
 function App() {
   return (
     <div className="App">
@@ -13,7 +16,10 @@ function App() {
       {/* <FunctionalComponent/> */}
       {/* <StateDemo/> */}
       {/* <User/> */}
-      <Userinfo/>
+      {/* <Userinfo/> */}
+      {/* <Parent/> */}
+      {/* <A/> */}
+      <Parent1/>
     </div>
   );
 }
