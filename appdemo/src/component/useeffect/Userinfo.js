@@ -1,51 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-function User() {
-    let[user,setUser]=useState([]);
-    let[data,setData]=useState([]);
 
-    const getData=()=>{
-        axios.get("https://randomuser.me/api/?results=200")
+function Userinfo() {
+     let[user,setUser]=useState([]);
+    useEffect(()=>{
+         axios.get("https://randomuser.me/api/?results=20")
         .then((res)=>{
             console.log(res.data.results);
             setUser(res.data.results);
-            setData(res.data.results);
         })
         .catch((error)=>{
             console.log(error)
         })
-    }
-    const filterData=(e)=>{
-        if (e.target.value==='male') {
-            setUser(data.filter((element,index)=>{
-                return element.gender==='male'
-            }))
-        }else if (e.target.value==='female'){
-            setUser(data.filter((element,index)=>{
-                return element.gender==='female'
-            }))
-        }else setUser(data);
-        
-    }
+    },[])
   return (
-    <div>
-        <h2>user Info</h2>
-        <button onClick={getData}> Get data</button>
-        {
-            user.length>0 &&(
-                <div>
-                    <input type='radio' name='gender' value='all' onChange={filterData} defaultChecked/>all 
-                    <input type='radio' name='gender' value='male'onChange={filterData} />male
-                    <input type='radio' name='gender' value='female'onChange={filterData} />female
-                </div>
-
-            )
-        }
-        {
+    <div >
+         {
             user.length>0 ? 
-            <div>
-                <table className='table table-hover'>
+            <div style={{width:"30%",margin:"50px auto"}}>
+                <table className='table table-hover table-striped'>
                     <thead className='table table-dark'>
                         <tr>
                             <th>Id</th>
@@ -80,4 +54,4 @@ function User() {
   )
 }
 
-export default User
+export default Userinfo
