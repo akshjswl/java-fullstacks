@@ -9,6 +9,10 @@ import Userinfo from './component/useeffect/Userinfo';
 import Parent from './component/props/Parent';
 import A from './component/propsdrilling/A';
 import Parent1 from './component/contextapi/Parent1';
+import Main from './component/condrend/Main';
+import { Routes,Route } from 'react-router-dom';
+import Nav from './component/route/Nav';
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +23,20 @@ function App() {
       {/* <Userinfo/> */}
       {/* <Parent/> */}
       {/* <A/> */}
-      <Parent1/>
+      {/* <Parent1/> */}
+      {/* <Main/> */}
+      <Nav/>
+      <Routes>
+        <Route path='/state' element={<StateDemo/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/props' element={<Parent/>}/>
+        <Route path='/pdrilling' element={<A/>}/>
+        <Route path='/context' element={<Parent1/>}/>
+        <Route path='/Axios' element={<User/>}/>
+        <Route path='/useeffect' element={<Userinfo/>}/>
+        <Route path='/crend' element={<Main/>}/>
+        
+      </Routes>
     </div>
   );
 }

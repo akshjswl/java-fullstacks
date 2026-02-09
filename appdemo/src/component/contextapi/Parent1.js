@@ -17,4 +17,4 @@ function Parent1() {
   )
 }
 
-export default Parent1
+export default Parent1  
