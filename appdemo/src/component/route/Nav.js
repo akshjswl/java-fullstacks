@@ -16,6 +16,8 @@ function Nav() {
         <a href='/Axios'>Axios</a>
         <a href='/useeffect'>useeffect</a>
         <a href='/crend'>condrend</a>
+        <a href='/preport'>Product Report</a>
+        <a href='/addproduct'>Add Product</a>
         <a href='/product'>Product</a>
         
 
