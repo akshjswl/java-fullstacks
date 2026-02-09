@@ -12,6 +12,11 @@ import Parent1 from './component/contextapi/Parent1';
 import Main from './component/condrend/Main';
 import { Routes,Route } from 'react-router-dom';
 import Nav from './component/route/Nav';
+import Product from './component/nestedrouting/Product';
+import Electronics from './component/nestedrouting/Electronics';
+import Jewellery from './component/nestedrouting/Jewellery';
+import Retail from './component/nestedrouting/Retail';
+import Garment from './component/nestedrouting/Garment';
 
 function App() {
   return (
@@ -35,7 +40,12 @@ function App() {
         <Route path='/Axios' element={<User/>}/>
         <Route path='/useeffect' element={<Userinfo/>}/>
         <Route path='/crend' element={<Main/>}/>
-        
+        <Route path='/product' element={<Product/>}>
+          <Route path='electronics' element={<Electronics/>}/>
+          <Route path='retails' element={<Retail/>}/>
+          <Route path='garments' element={<Garment/>}/>
+          <Route path='jewellery' element={<Jewellery/>}/>
+        </Route>
       </Routes>
     </div>
   );

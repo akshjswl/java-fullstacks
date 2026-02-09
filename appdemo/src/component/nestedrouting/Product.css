@@ -1,0 +1,29 @@
+.pmContainer{
+ display: flex; 
+
+ 
+}
+.plContainer{
+    background-color:black ;
+    color: white;
+    width: 25%;
+    flex-direction: column;
+    display: flex; 
+     a{
+        color: white;
+        text-decoration: none;
+        margin: 5px auto;
+    }
+}
+.prContainer{
+    background-color: white;
+    color: white;
+    width: 75%;
+    display: flex; 
+    a{
+        color: white;
+        text-decoration: none;
+        margin: 10px auto;
+    }
+    
+}
