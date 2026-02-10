@@ -8,6 +8,10 @@ function AddFood() {
         price:""
     })
     let[msg,setMsg]=useState("");
+    let[errors,setErrors]=useState({
+        efname:"",
+        eprice:""
+    })
     const addData=()=>{
         axios.post("http://localhost:1004/food/add",food)
         .then((res)=>{
@@ -15,7 +19,12 @@ function AddFood() {
             setMsg(res.data);
         })
         .catch((error)=>{
-            alert("Something went wrong😣");
+            console.log(error)
+            setErrors({
+                efname:error.response.data.fname,
+                eprice:error.response.data.price
+            })
+            // alert("Something went wrong😣");
         })
     }
     const refreshData = () => {
@@ -28,7 +37,7 @@ function AddFood() {
   }
   return (
     <div style ={{width:"30%", margin:"50px auto"}}>
-        <h2>Add Food form</h2>
+        <h2 className='text-primary'>Add Food form</h2>
         <input type='text' className='form-control'value={food.fid}
         onChange={(event)=>{
             setFood({
@@ -45,6 +54,7 @@ function AddFood() {
                 fname:event.target.value
             })
         }} placeholder='Enter the food name' />
+        <h2 style={{color:"red"}}>{errors.efname}</h2>
       <input type='text' className='form-control'
       value={food.price}
         onChange={(event)=>{
@@ -53,6 +63,7 @@ function AddFood() {
                 price:event.target.value
             })
         }} placeholder='Enter the price' />
+        <h2 style={{color:"red"}}>{errors.eprice}</h2>
       <button className='btn-btn-outline-primary'onClick={addData}>Add Food</button>&nbsp;&nbsp;
       <button className='btn-btn-outline-secondary' onClick={refreshData}>Refresh</button>
       <h2>{msg}</h2>
