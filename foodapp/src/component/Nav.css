@@ -1,0 +1,23 @@
+.mContainer{
+ display: flex; 
+ background-color: black;  
+ 
+}
+.lContainer{
+    background-color:black ;
+    color: white;
+    width: 30%;
+    
+}
+.rContainer{
+    background-color: black;
+    color: white;
+    width: 70%;
+    display: flex; 
+    a{
+        color: white;
+        text-decoration: none;
+        margin: 20px auto;
+    }
+    
+}
